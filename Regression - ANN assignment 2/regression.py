@@ -59,10 +59,10 @@ for i in range(len(X)):
 Rsquare = Rnum/Rden
 
 
-#Predicting the gallons for the 1200 miles of travel.
-DepPrediction = m*1200 + c
+#Predicting the gallons for the 1400 distance of travel.
+DepPrediction = m*1400 + c
 print("Value of Co-efficient of determination is:",Rsquare)
-print("Value predicted through the model for 1200 miles is: %d Gallons (Approximately)" % int(DepPrediction))
+print("Value predicted through the model for 1400 miles is: %d Gallons (Approximately)" % int(DepPrediction))
 
 #Plotting the values on a graph
 
@@ -85,10 +85,10 @@ plt.show()
 
 #Using the Sklearn module to make prediction
 X = X.reshape(-1,1)
-Xnew = [[1200]]
+Xnew = [[1400]]
 
 reg = LinearRegression()
 reg.fit(X,Y)
 Ypredicted = reg.predict(Xnew)
 
-print("Value predicted through the Sklearn module for 1200 distance is: %d Gallons (Approximately)" % int(Ypredicted))
+print("Value predicted through the Sklearn module for 1400 distance is: %d Gallons (Approximately)" % int(Ypredicted))
