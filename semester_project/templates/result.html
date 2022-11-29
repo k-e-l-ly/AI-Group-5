@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Heart Disease Project</title>
+        
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.7 -->
+        
+
+        <link rel='stylesheet' href='/static/bower_components/bootstrap/dist/css/bootstrap.min.css'>
+      <!-- iCheck for checkboxes and radio inputs -->
+      <link rel="stylesheet" href="/static/plugins/iCheck/all.css">
+        <!-- DataTables -->
+      <link rel="stylesheet" href="/static/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="/static/bower_components/font-awesome/css/font-awesome.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="/static/dist/css/AdminLTE.min.css">
+        
+        <link rel="stylesheet" href="/static/dist/css/skins/_all-skins.min.css">
+  
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  
+       
+  </head>
+  <div class="container">
+    <nav style="background-image: url(/static/header-background.png);
+  background-repeat: no-repeat; background-size: cover;
+  color: #671010;" class="navbar navbar-default navbar-fixed-top navbar-inverse
+  " role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-header">
+        
+        <a href="index.php" class="navbar-brand headerFont text-lg" style="color: white;"><strong><img itemprop="image" class="mobile" src="https://susa.strathmore.edu/wp-content/uploads/2019/09/studentaffairslogo.png" alt="Logo" style="height: 150%;"></strong></a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="example-nav-collapse">
+        <ul class="nav navbar-nav">
+          
+         
+          <li class="nav-item"><a href="#aboutTab" ><span class="subFont"><strong>About Us</strong></span></a></li>
+          <li class="nav-item"><a href="#feedbackTab"><span class="subFont"><strong>Contact Us</strong></span></a></li>
+          
+        </ul>
+        
+        <span style="" class="normalFont"><a href="register/register.php" style="padding-left:24px;background-color: #dd9933!important;border-color: #dd9933!important;" class="btn btn-success navbar-right navbar-btn"><strong>Sign Up</strong></a></span>
+        <span class="normalFont"><a href="login/login.php" style="padding-left:24px;background-color: #dd9933!important;border-color: #dd9933!important;" class="btn btn-success navbar-right navbar-btn"><strong>Login</strong></a></span>
+      </div>
+
+    </div> <!-- end of container -->
+  </nav>
+  </div>
+
+<body>
+
+    <div class="container">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2 class='container-heading'><span class="heading_font">Heart Disease Prediction</span></h2>
+
+        <br><br><br>
+
+        <!-- Result -->
+		<div class="results">
+			{% if prediction==1 %}
+				<h1 style="font-style: oblique; font-size: 75px;"><span class='danger'>Oops!<br><br>YOU HAVE A HEART DISEASE.</span></h1>
+				
+			{% elif prediction==0 %}
+				<h1 style="color: rgb(255, 255, 255) !important; font-style: oblique; font-size: 75px;"><span class='safe'>CONGRATULATIONS!<br><br> YOU DON'T HAVE A HEART DISEASE.</span></h1>
+				
+			{% endif %}
+		</div>
+        </form>
+
+    </div>
+    <div>
+            <br><br> <br><br><br><br><br><br><br><br>
+
+           
+
+    </div>
+
+
+<style>
+
+/* Background Image */
+body
+{
+    background-image:url(/static/bg.jpg);
+height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+/* Color */
+body{
+	font-family: 'Times New Roman', Times, serif !important;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+
+/* Heading Font */
+.container-heading{
+    margin: 0;
+}
+
+.heading_font{
+    color: #black;
+	font-family: 'Times New Roman', Times, serif !important;
+	font-size: 50px;
+	font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+<footer>
+        <div class="container"style="background-image: url(/static/alumni.jpg);width: 100%;">
+          <div class="row">
+            <div class="col-sm-6 text-center">
+             <h2 class="specialHead" style="color: white;">AI Group 5 </h2>
+            </div>
+            <div class="col-sm-6 text-center">
+              <img src="/static/Facebook.png" width="50" height="50" alt="">
+              <img src="/static/Twitter.png" width="50" height="50" alt="">
+             <a href="https://github.com/ivanmug/StrathOnline-Voting-Sytem"> <img src="/static/GitHub.png" width="50" height="50" alt=""></a>
+            </div>
+
+          </div>
+        </div>
+      </footer>
+
+
+</body>
+
+
+</html>
